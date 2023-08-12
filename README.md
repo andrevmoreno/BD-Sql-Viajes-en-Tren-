@@ -152,31 +152,30 @@ ACID:
     
 ![Principales](/assets/Principales.png "Principales")
     
-    Propios de Postgres
+Propios de Postgres
 
-    ![infografia de]
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bdb0fb5d-c5dd-40f8-95b1-b3bda963e59c/Untitled.png
-    
-    Podemos crear nuestro propio data type muy sencillo, tan solo con un comando (CREATE TYPE).
-    
-    ---
-    
-    - Numéricos(Números enteros, Números Decimales, Seriales).
-    - Monetarios(cantidad de moneda).
-    - Texto(almacenar cadenas y texto, existen tres VARCHAR, CHAR, TEXT).
-    - Binario(1 Y 0).
-    - Fecha/Hora(Para almacenar Fechas y/o Horas, DATE TYPE, TIME TYPE, TIMESTAMP, INTERVAL).
-    - Boolean(Verdadero o Falso).
-    - Especiales propios de postgres.
-    - Geométricos: Permiten calcular distancias y áreas usando dos valores X y Y.
-    - Direcciones de Red: Cálculos de máscara de red.
-    - Texto tipo bit: Cálculos en otros sistemas (ej: hexadecimal, binario).
-    - XML, JSON: Postgres no permite guardar en estos formatos.
-    - Arreglos: Vectores y Matrices.
-    - BLOB: Son elementos utilizados en las bases de datos para almacenar datos de gran tamaño que cambian de forma dinámica. (No todos los Sistemas Gestores de Bases de Datos son compatibles con los BLOB).
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/39dda398-75c8-4631-a03b-187660d8d74c/Untitled.png
+![Especiales](/assets/Especiales.png "Especiales")
+
+
+Podemos crear nuestro propio data type muy sencillo, tan solo con un comando (CREATE TYPE).
+
+---
+
+- Numéricos(Números enteros, Números Decimales, Seriales).
+- Monetarios(cantidad de moneda).
+- Texto(almacenar cadenas y texto, existen tres VARCHAR, CHAR, TEXT).
+- Binario(1 Y 0).
+- Fecha/Hora(Para almacenar Fechas y/o Horas, DATE TYPE, TIME TYPE, TIMESTAMP, INTERVAL).
+- Boolean(Verdadero o Falso).
+- Especiales propios de postgres.
+- Geométricos: Permiten calcular distancias y áreas usando dos valores X y Y.
+- Direcciones de Red: Cálculos de máscara de red.
+- Texto tipo bit: Cálculos en otros sistemas (ej: hexadecimal, binario).
+- XML, JSON: Postgres no permite guardar en estos formatos.
+- Arreglos: Vectores y Matrices.
+- BLOB: Son elementos utilizados en las bases de datos para almacenar datos de gran tamaño que cambian de forma dinámica. (No todos los Sistemas Gestores de Bases de Datos son compatibles con los BLOB).
+
+![](/assets/CREATE-TYPE.png)
 
 ### Gestión de la información en Postgres (DDL)
 
@@ -186,11 +185,8 @@ ACID:
     
     serial = id con  Auto Incremental
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/011cc5bf-a00a-4e30-b312-617983fa0e2f/Untitled.png
+    ![](/assets/Acciones.png)
     
-    Hacerlo con pgadmin:
-    
-    [](https://platzi.com/clases/1480-postgresql/24184-creacion-de-tablas/)
     
 - #### Particiones
     
@@ -198,7 +194,7 @@ ACID:
     
     Deben ser creadas al momento de crear toda la infraestructura y diseño del schema.
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b62957e9-16af-42d6-9d10-1e54e895fd9f/Untitled.png
+    ![](/assets/Particiones.png)
     
     Divide una tabla con la misma estructura lógica en diferentes tablas más pequeñas ubicadas físicamente en diferentes espacios del disco (o incluso, de otros discos).
     
@@ -240,15 +236,11 @@ ACID:
         DROP TABLE bitacora_viaje;```
         ```
         
-    
-    Clase particiones:
-    
-    [](https://platzi.com/clases/1480-postgresql/24171-particiones/)
 
 
 - #### Roles
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dece6a6d-d1f0-49e0-bcb1-7283ee4db66c/Untitled.png
+    ![](/assets/Roles.png)
     
     Entrar a Postgres seleccionando usuario desde Linux:
     
@@ -277,11 +269,11 @@ ACID:
     
     Vamos a Login y creamos un usuario, dándole sus parámetros.
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/db298c15-341e-48f1-9d7a-e7d829b3dbb0/Untitled.png
+    ![](/assets/Create-Login.png)
     
     Luego vamos a tables, Grant Wizard y asignamos los permisos:
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e74fe2fa-dd86-4363-9f8b-f7f9b1dd740d/Untitled.png
+    ![](/assets/Grant-Wizard.png)
     
     Clase de creación de roles: 
     
@@ -291,11 +283,11 @@ ACID:
     
     Para hacerlo desde la consola: 
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6d595df9-2fa7-4161-9172-18bd77707f17/Untitled.png
+    ![](/assets/llavesForaneas-ALTER-TABLE.png)
     
     En PGAdmin hay que ir acá:
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bc624af9-2699-428c-ac3d-d9fc92b49ff1/Untitled.png
+    ![](/assets/PGAdmin.png)
     
     ---
     
@@ -326,15 +318,21 @@ Lo mas conveniente es habilitar un flag o una columna tipo usuario_activo y darl
     
     [Flowchart Maker & Online Diagram Software](https://app.diagrams.net/)
 
+
+### Este es diagrama con el que se trabajo:
+
+ [![Texto alternativo](/assets/diagrama%20de%20datos.png)](https://miro.com/app/board/uXjVMBgRLIY=/)
+
+
 - ## Consultas avanzadas (DML):
 
 - #### Actualizar datos
     
-   https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ca2596c-bb70-48ec-b227-0895610adf87/Untitled.png
+   ![UPDATE](/assets/Update.png)
     
     *ON CONFLICT DO:* 
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/55b361f1-aecf-47b9-afa8-35c56f64f1ba/Untitled.png
+    ![](/assets/ON-CONFLICT-DO.png)
     
     Target:
     
@@ -350,19 +348,16 @@ Lo mas conveniente es habilitar un flag o una columna tipo usuario_activo y darl
 
 - Joins
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a7cbe778-b175-4a3e-89fd-b79b1c3c8d29/Untitled.png
+    ![](assets/joins/JOIN-ON.png)
+    ![](assets/joins/LEFT-JOIN)
+    ![](assets/joins/USING.png)
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6eddaf86-80ba-49f8-ab2e-a105020a0e4e/Untitled.png
-    
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ffbf80d4-3c0b-46d0-b150-7f160ae19ae7/Untitled.png
     
     USING (ID) —> Es lo mismo que la sentencia arriba de esta. Se usa cuando la llave que enlaza ambos campos es la misma.
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0176e382-e7e2-48c4-a8f5-3c95af41d851/Untitled.png
+    ![](assets/joins/SQL-JOINS.png)
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0176e382-e7e2-48c4-a8f5-3c95af41d851/Untitled.png
-    
-- Funciones especiales PSQL (eJ On conflict do)
+ - Funciones especiales PSQL (eJ On conflict do)
     
     ---
     
@@ -410,12 +405,11 @@ Lo mas conveniente es habilitar un flag o una columna tipo usuario_activo y darl
     
     ---
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/aab13e9f-6550-4f5d-a018-b7c05d9e5504/Untitled.png
+    ![](/assets/Principales.png)
     
 - Funciones especiales AVANZADAS PSQL
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8be16640-d5ee-4beb-a51a-ea7c1900d91b/Untitled.png
-    
+    ![](/assets/Avanzadas.png)
     ---
     
     - COALESCE: compara dos valores y retorna el que es nulo.
@@ -480,7 +474,7 @@ Lo mas conveniente es habilitar un flag o una columna tipo usuario_activo y darl
         
         Output:
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/52c77d2d-4ee1-44b4-ba86-eedc6fa3901f/Untitled.png
+        ![](/assets/Output.png)
         
         ---
         
@@ -500,12 +494,12 @@ Lo mas conveniente es habilitar un flag o una columna tipo usuario_activo y darl
     - Crear vista volátil:
         - En PgAdmin:
         
-    ![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5577146a-e7f6-436b-8452-1d504dcad46d/Untitled.png)
+    
+        ![](/assets/Crear%20Vistas/Crear-vistas-PGAdmin.png)
         
         Y en *code* copiamos el query a guardar:
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ccb91d10-ef6a-4bd7-8efb-1f0c47094960/Untitled.png
-        
+        ![](/assets/crear%20Vistas/Crear-vistas-save.png)
         Apretamos *save*  y nuestra vista volátil quedará asentada.
         
         - En consola:
@@ -533,22 +527,23 @@ Lo mas conveniente es habilitar un flag o una columna tipo usuario_activo y darl
         
         rango_view es el nombre de la vista anteriormente creada por el profesor
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/83763f92-2fd2-480d-949e-30e0266a1d05/Untitled.png
+        ![](/assets/Crear%20Vistas/vista-volatil-rango_view.png)
         
     - Crear vista materializada:
         - En PgAdmin:
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5a148074-620e-45bc-8c4e-4aa283af186f/Untitled.png
+        ![](/assets/Crear%20Vistas/vistas-materializada.png)
         
         En *definition* copiamos el query:
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e39cfeec-a830-48cb-ac0c-308179987d50/Untitled.png
+        ![](/assets/Crear%20Vistas/vistas-materializada_Definition.png)
         
         Decidimos si se va a crear y guardarse con el output automáticamente al crearla, o si se van a guardar los datos al momento que se ejecuta:
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3726b69a-4e64-4783-a608-a79201a1eebe/Untitled.png
-        
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ceb27141-a0ea-4db4-891a-27bb5ae1d7fc/Untitled.png
+        ![](/assets/Crear%20Vistas/vistas-materializada_output_storage.png)
+    
+        ![](/assets/Crear%20Vistas/vistas-materializada_output_storage-No.png)
+
         
         Y luego se guarda en *save*.
         
@@ -577,29 +572,28 @@ Lo mas conveniente es habilitar un flag o una columna tipo usuario_activo y darl
         
         despues_noche_mview es la vista permanente previamente creada por el profesor.
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eb753ef8-f9f3-41dd-8579-2e0cf90f747f/Untitled.png
-        
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ecd09be9-132a-4a80-9db3-0ba92940d4e7/Untitled.png
+        ![](/assets/Crear%20Vistas/Traer-vistas-materializadas/SELECT-mview.png)
+        ![](/assets/Crear%20Vistas/Traer-vistas-materializadas/mview-Data-output.png)
         
         Le borramos un dato y actualizamos para ver como actúa:
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2cd281ae-a80b-49e4-a7ad-558b3999a912/Untitled.png
+        ![](/assets/Crear%20Vistas/Traer-vistas-materializadas/DELETE-FROM_WHERE.png)
         
         Si no actualizo, seguirá igual que la de arriba la vista permanente.
         
         Pero si actualizo se verán las ult modificaciones. Se actualiza con:
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1709af0e-755a-42d4-85ed-30f3937237a0/Untitled.png
+        ![](/assets/Crear%20Vistas/Traer-vistas-materializadas/REFRESH-MATERIALIZED-VIEW.png)
         
         Donde el output es: (Hay 6 rows pq´se borró la qué tenía *id = 2*)
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e6f59cc-c28f-492d-a8f8-7881943d67a0/Untitled.png
+        ![](/assets/Crear%20Vistas/Traer-vistas-materializadas/REFRESH-MATERIALIZED-VIEW-output.png)
         
 - PL/PgSQL (Procedural Language / PostgreSQL)
     
     Nos permite crear bloques de códigos directamente sobre la BD.
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/40b3dd0d-9ce3-4500-91cc-785e886c3ab4/Untitled.png
+    ![](/assets/PLPgSQL/PLPgSQL.png)
     
     Es una función como la de cualquier lenguaje:
     
@@ -796,7 +790,7 @@ Los disparadores se 'lanzan' cuando se ejecuta alguna de estas:
     
     ### Crear BD. Ajustes generales.
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/156911dd-9154-4f36-9b29-8269b2bd73a2/Untitled.png
+    ![](/assets/Buenas-Practicas/crearBD-ajustes-generales.png)
     
     (En los 3 puntos al lado del nombre de la DB podemos ver y elegir donde quedará guardada. Predeterminado: Documentos del user)
     
@@ -811,7 +805,7 @@ Los disparadores se 'lanzan' cuando se ejecuta alguna de estas:
 
 ### Segunda parte de ajustes: Dump options
 
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9da7ddd2-4ee6-4fad-b54b-0178871cfb9b/Untitled.png
+![](/assets/Buenas-Practicas/Dump-options.png)
 
 En *sections pre-data* significa si quiere traer la BD antes de hacer el insert, o después. O directamente decirle que traiga los datos activando ***data.***
 
@@ -825,7 +819,7 @@ Esto nos puede ayudar si necesitamos saber más sobre estos y otras opciones que
 
 - Restore
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2674ee7a-96cf-43dc-9e58-bca7ada4256e/Untitled.png
+    ![](/assets/Buenas-Practicas/restore.png)
     
     Queda poner ubicación y nombre del archivo y configuramos restore options según las configuraciones del backup
 
@@ -833,7 +827,7 @@ Esto nos puede ayudar si necesitamos saber más sobre estos y otras opciones que
     
     Esto lo hace automático PostgreSQL. Pero en casos especiales como por ejemplo que los querys estén tardando mucho o la BD presente conflictos quizás es necesario un mantenimiento manual. Tener cuidado al hacerlo.
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c51c395-83d3-4c5d-968e-ed3e7c981b89/Untitled.png
+    ![](/assets/Buenas-Practicas/Mantenimiento.png)
     
     Las opciones significan:
     
@@ -846,7 +840,7 @@ Esto nos puede ayudar si necesitamos saber más sobre estos y otras opciones que
 
 - Réplicas
     
-    !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3c3ea3a7-e8da-4b07-82a1-1d3a2be68986/Untitled.png
+    ![](/assets/Buenas-Practicas/replicas.png)
     
     No se puede hacer una escritura (modificación) y una lectura al mismo tiempo. Por las limitaciones computacionales. Entonces Postgres lo qué hace es qué bloquea la tabla que estás modificando para dejar la qué estás leyendo O bloquea la tabla que estas leyendo para dejarte la tabla que estás modificando.
     
@@ -865,7 +859,7 @@ Esto nos puede ayudar si necesitamos saber más sobre estos y otras opciones que
     - Para hacerlo, debemos crear 2 severs separados.
     - Luego de hacerlo, a la instancia o server maestra debemos decirle la IP con la cuál vamos a replicar, y qué en esa confíe.
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3f47b63c-f0c7-4c65-9af6-ba535a58b127/Untitled.png
+        ![](/assets/Buenas-Practicas/crear-replicas/crear-replica.png)
         
     - La reiniciamos para que se guarden los cambios.
     
@@ -875,11 +869,11 @@ Esto nos puede ayudar si necesitamos saber más sobre estos y otras opciones que
         - En master:
         - Cambiar archivo *postgresql.conf* en los campos:
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5bd1ea2a-10d3-4a35-bd98-81b6cc2bb082/Untitled.png
+        ![](/assets/Buenas-Practicas/crear-replicas/en-master-backup.png)
         
         Lo convertimos en:
         
-        !https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c41d1860-fffc-4ce8-ab05-ef5488211cb8/Untitled.png
+        ![](/assets/Buenas-Practicas/crear-replicas/en-master-backup-convertimos.png)
         
         Es decir, una BD que mantiene sus archivos hasta qué su replica se las lleve y las ejecute.
         
@@ -952,10 +946,3 @@ Esto nos puede ayudar si necesitamos saber más sobre estos y otras opciones que
     
     Básicamente es una partición que divide los querys en diferentes tablas y luego consolida todo en una bajando mucho el costo computacional.
     
-    Importante: Ver este vídeo:
-    
-    [](https://platzi.com/clases/1480-postgresql/24199-otras-buenas-practicas/)
-    
-    Se trata del algoritmo de cambio de nombres por tabla cada una determinada cantidad de tiempo para obtener mayor rapidez y eficiencia en una tabla cuando recibe miles de querys por segundo.
-    
-    Acá explicado en pdf con un ejemplo:
