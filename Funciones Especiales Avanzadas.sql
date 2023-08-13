@@ -18,11 +18,12 @@ SELECT id, nombre, direccion_residencia, fecha_nacimiento,
     END)
 FROM public.pasajero;
 
-SELECT id, nombre, direccion_residencia, fecha_nacimiento,
-    (CASE
-    WHEN (CURRENT_DATE - fecha_nacimiento)/365 >= 18 THEN
-        '>Mayor'
-    ELSE
-        '<Menor'
-    END)
-FROM public.pasajero;
+--Consulatamos la información de los pasajeros agregando una columna adicional quienes comienza su nombre D y también quien tien mas de 18 años
+SELECT COALESCE(nombre, 'Nombre en Null') AS nombrenull , *,
+CASE WHEN fecha_nacimiento > '2015-01-01' THEN
+'Niño' ELSE 'Mayor' END,
+CASE WHEN nombre ILIKE 'D%' THEN
+'Empieza con D' ELSE 'No empieza con D' END, 
+Case WHEN extract(years from age(current_timestamp,fecha_nacimiento::timestamp)) >= 18 THEN
+'Mayor de edad.' ELSE 'Menor de edad.' END
+FROM pasajero;

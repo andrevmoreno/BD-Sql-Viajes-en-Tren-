@@ -1,3 +1,5 @@
+--Hacemos Joins a las columnas de la tablas
+
 SELECT * FROM pasajero
 JOIN viaje ON (viaje.id_pasajero = pasajero.id);
 

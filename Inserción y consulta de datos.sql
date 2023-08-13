@@ -2,11 +2,11 @@
 --Inserción y consulta de datos
 
 
-SELECT * FROMpublic.estacion;--si data
-SELECT * FROMpublic.pasajero;--reto
-SELECT * FROMpublic.trayecto;--si data
-SELECT * FROMpublic.tren;--si data
-SELECT * FROMpublic.viaje;--reto
+SELECT * FROMpublic.estacion;
+SELECT * FROMpublic.pasajero;
+SELECT * FROMpublic.trayecto;-
+SELECT * FROMpublic.tren;
+SELECT * FROMpublic.viaje;
 
 
 
